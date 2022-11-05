@@ -1,0 +1,15 @@
+run-name: ${{ github.actor }} is testing out GitHub Actions
+name: Tests
+on:
+  push:
+    branches:
+    - main
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Checkout code
+        run: python test_sum.py
